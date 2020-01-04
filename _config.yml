@@ -1,5 +1,1 @@
 theme: jekyll-theme-cayman
-
-url: "https://jonalbo.com" # the base hostname & protocol for your site
-plugins:
-  - jekyll-sitemap
