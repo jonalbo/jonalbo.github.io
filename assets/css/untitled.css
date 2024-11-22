@@ -9,7 +9,6 @@
     word-wrap: break-word; /* Break long words if needed */
     text-align: center;
     font-size: 16px; /* Consistent font size */
-    line-height: 1.2; /* Adjust spacing between lines */
 }
 
 /* Responsive font size for navbar */
