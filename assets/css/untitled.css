@@ -40,6 +40,37 @@ img.img-fluid {
 /* Adjust font size for smaller screens */
 @media (max-width: 768px) {
     .navbar-brand.logo {
+
+/* Reduce padding and margin of the container */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%; /* Ensure it spans full width */
+}
+
+/* Adjust the row to remove gaps */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Adjust columns for better spacing */
+.col-md-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Add a responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .col-md-6 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
         font-size: 14px; /* Reduce font size for mobile screens */
         padding: 10px; /* Add some padding for readability */
     }
