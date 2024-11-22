@@ -1,7 +1,8 @@
 .gradient {
-  background: linear-gradient(120deg,#470303,#800303);
+  background: linear-gradient(120deg, #470303, #800303);
   color: #fff;
 }
+
 /* Ensure image is responsive */
 img.img-fluid {
     max-width: 100%;
@@ -13,7 +14,7 @@ img.img-fluid {
     .container .row {
         flex-direction: column; /* Stack items vertically */
     }
-    
+
     .col-md-6 {
         width: 100%; /* Take full width */
         text-align: center; /* Center align text for better readability */
@@ -23,7 +24,7 @@ img.img-fluid {
     .col-md-6 img {
         margin-bottom: 20px; /* Add spacing between image and text */
     }
-    
+
     .text-justify {
         font-size: 14px; /* Adjust font size for mobile readability */
         padding: 10px;
@@ -40,6 +41,10 @@ img.img-fluid {
 /* Adjust font size for smaller screens */
 @media (max-width: 768px) {
     .navbar-brand.logo {
+        font-size: 14px; /* Reduce font size for mobile screens */
+        padding: 10px; /* Add some padding for readability */
+    }
+}
 
 /* Reduce padding and margin of the container */
 .container {
@@ -66,12 +71,22 @@ img.img-fluid {
         padding-left: 10px;
         padding-right: 10px;
     }
+
     .col-md-6 {
         padding-left: 5px;
         padding-right: 5px;
+        margin-bottom: 20px; /* Add spacing between stacked columns */
     }
-}
-        font-size: 14px; /* Reduce font size for mobile screens */
-        padding: 10px; /* Add some padding for readability */
+
+    .col-md-6 img {
+        margin-bottom: 20px; /* Space between image and contact info */
+    }
+
+    .container-fluid {
+        padding-top: 100px; /* Prevent header overlap with content */
+    }
+
+    .col-md-6 p {
+        margin-top: 20px; /* Adjust spacing between contact info and text */
     }
 }
