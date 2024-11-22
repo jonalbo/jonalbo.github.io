@@ -5,7 +5,7 @@
 
 /* Navbar: Ensure consistent height and text wrapping */
 .navbar {
-    max-height: 80px; /* Limit the navbar height */
+
     overflow: hidden; /* Prevent overflow */
     padding: 10px 15px; /* Adjust padding for smaller screens */
 }
