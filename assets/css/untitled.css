@@ -3,13 +3,6 @@
   color: #fff;
 }
 
-/* Navbar: Ensure consistent height and text wrapping */
-.navbar {
-
-    overflow: hidden; /* Prevent overflow */
-    padding: 10px 15px; /* Adjust padding for smaller screens */
-}
-
 /* Navbar brand styling */
 .navbar-brand.logo {
     white-space: normal; /* Allow text to wrap */
