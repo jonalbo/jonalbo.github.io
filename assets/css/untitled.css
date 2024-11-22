@@ -2,4 +2,30 @@
   background: linear-gradient(120deg,#470303,#800303);
   color: #fff;
 }
+/* Ensure image is responsive */
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
 
+/* Text and image scaling for mobile */
+@media (max-width: 768px) {
+    .container .row {
+        flex-direction: column; /* Stack items vertically */
+    }
+    
+    .col-md-6 {
+        width: 100%; /* Take full width */
+        text-align: center; /* Center align text for better readability */
+        padding: 10px; /* Add some padding */
+    }
+
+    .col-md-6 img {
+        margin-bottom: 20px; /* Add spacing between image and text */
+    }
+    
+    .text-justify {
+        font-size: 14px; /* Adjust font size for mobile readability */
+        padding: 10px;
+    }
+}
