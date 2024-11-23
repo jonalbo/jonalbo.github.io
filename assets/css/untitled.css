@@ -8,8 +8,9 @@
     display: flex;
     align-items: center; /* Center items vertically */
     justify-content: space-between; /* Space out brand and button */
-    padding: 10px 15px; /* Internal spacing */
+    padding: 15px 15px; /* Internal spacing */
     position: relative; /* Allow positioning of child elements */
+    min-height: 70px;
 }
 
 /* Navbar brand styling */
@@ -18,15 +19,16 @@
     word-wrap: break-word; /* Break long words if needed */
     text-align: left;
     font-size: 16px; /* Consistent font size */
+    line-height: 1.2; /* Adjust spacing between lines */
+    max-width: 70%; /* Prevent text from taking up too much space */
 }
 
 /* Navbar toggler button */
 .navbar-toggler {
     position: absolute; /* Pin the button to a fixed location */
     right: 15px; /* Keep it always aligned to the right */
-    top: 50%; /* Vertically center it */
-    transform: translateY(-50%); /* Adjust for centering offset */
-    padding: 5px 10px; /* Adjust padding for better alignment */
+    top: 15px; /* Always keep it at the top of the navbar */
+    padding: 5px 10px; /* Adjust padding for alignment */
     z-index: 10; /* Ensure it stays above other elements */
 }
 
@@ -44,7 +46,7 @@
 
 /* Fix for images in landing page */
 .landing-page img.img-fluid {
-    margin-bottom: 20px; /* Ensure space below images */
+    margin-bottom: 5px; /* Ensure space below images */
 }
 
 /* General fixes for columns on smaller screens */
