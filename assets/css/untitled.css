@@ -3,43 +3,55 @@
   color: #fff;
 }
 
-/* Navbar styling */
-.navbar {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space out brand and button */
-    padding: 10px 15px; /* Internal spacing */
-    position: relative; /* Allow positioning of child elements */
-    max-height: 80px; /* Prevent excessive height growth */
-}
-
 /* Navbar brand styling */
 .navbar-brand.logo {
-    white-space: normal; /* Allow text wrapping */
-    word-wrap: break-word; /* Break long words */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words if needed */
+    text-align: left;
     font-size: 16px; /* Consistent font size */
-    line-height: 1.2; /* Adjust line spacing */
-    max-width: 70%; /* Limit brand width */
 }
 
-/* Navbar toggler button */
-.navbar-toggler {
-    position: absolute; /* Pin the button to a fixed location */
-    right: 15px; /* Keep it always aligned to the right */
-    top: 50%; /* Vertically center it */
-    transform: translateY(-50%); /* Adjust for centering offset */
-    padding: 5px 10px; /* Adjust padding for better alignment */
-    z-index: 10; /* Ensure it stays above other elements */
-}
-
-/* Responsive navbar brand font size */
+/* Responsive font size for navbar */
 @media (max-width: 768px) {
     .navbar-brand.logo {
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px; /* Reduce font size on mobile */
     }
 }
 
-/* Fix spacing for content below navbar */
-.container-fluid {
-    padding-top: 100px; /* Prevent overlap with the fixed navbar */
+/* Page-specific fixes for "landing-page" */
+.landing-page .container-fluid {
+    padding-top: 100px; /* Prevent overlap for landing page */
+}
+
+/* Fix for images in landing page */
+.landing-page img.img-fluid {
+    margin-bottom: 20px; /* Ensure space below images */
+}
+
+/* General fixes for columns on smaller screens */
+@media (max-width: 768px) {
+    .container .row {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .col-md-6 {
+        width: 100%; /* Full width on mobile */
+        text-align: center;
+        padding: 10px; /* Add padding for spacing */
+        margin-bottom: 20px; /* Add spacing between sections */
+    }
+
+    .col-md-6 img {
+        margin-bottom: 20px; /* Space between image and text */
+    }
+
+    .text-justify {
+        font-size: 14px; /* Smaller text for mobile */
+        padding: 10px;
+    }
+
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
