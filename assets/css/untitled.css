@@ -10,7 +10,7 @@
     justify-content: space-between; /* Space out brand and button */
     padding: 10px 15px; /* Internal spacing */
     position: relative; /* Allow positioning of child elements */
-    max-height: 80px; /* Prevent excessive height growth */
+    max-height: 120px; /* Prevent excessive height growth */
 }
 
 /* Navbar brand styling */
