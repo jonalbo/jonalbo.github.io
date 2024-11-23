@@ -3,12 +3,24 @@
   color: #fff;
 }
 
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space out brand and toggler */
+    padding: 10px 15px; /* Control internal spacing */
+    max-height: 80px; /* Prevent navbar from growing too tall */
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Ensure dropdown stays in the flow */
+}
+
 /* Navbar brand styling */
 .navbar-brand.logo {
     white-space: normal; /* Allow text to wrap */
     word-wrap: break-word; /* Break long words if needed */
     text-align: center;
     font-size: 16px; /* Consistent font size */
+    max-width: 70%; /* Prevent brand text from taking too much space */
 }
 
 /* Responsive font size for navbar */
@@ -18,9 +30,21 @@
     }
 }
 
+/* Navbar toggler button */
+.navbar-toggler {
+    margin-left: auto; /* Push toggler to the far right */
+    padding: 5px 10px; /* Adjust padding for better alignment */
+}
+
+/* Dropdown menu alignment */
+.collapse.navbar-collapse {
+    margin-top: 10px; /* Add spacing between dropdown and other navbar items */
+    padding-top: 5px; /* Prevent dropdown from collapsing into content */
+}
+
 /* Page-specific fixes for "landing-page" */
 .landing-page .container-fluid {
-    padding-top: 100px; /* Prevent overlap for landing page */
+    padding-top: 100px; /* Prevent overlap with navbar */
 }
 
 /* Fix for images in landing page */
@@ -53,5 +77,16 @@
     .container-fluid {
         padding-left: 10px;
         padding-right: 10px;
+        padding-top: 100px; /* Ensure content clears the navbar */
     }
+
+    .navbar-toggler {
+        margin-left: 0; /* Align button under the brand on smaller screens */
+        margin-top: 5px; /* Add some spacing on smaller screens */
+    }
+}
+
+/* Fix content spacing below navbar */
+.container-fluid {
+    padding-top: 80px; /* Ensure consistent spacing below header */
 }
