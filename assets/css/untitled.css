@@ -26,7 +26,7 @@
 .navbar-toggler {
     position: absolute; /* Pin the button to a fixed location */
     right: 15px; /* Keep it always aligned to the right */
-    top: 15px; /* Always keep it at the top of the navbar */
+    top: 20px; /* Always keep it at the top of the navbar */
     padding: 5px 10px; /* Adjust padding for alignment */
     z-index: 10; /* Ensure it stays above other elements */
 }
@@ -53,7 +53,7 @@
     .col-md-6 {
         width: 100%; /* Full width on mobile */
         text-align: center;
-        padding: 10px; /* Add padding for spacing */
+        padding: 0px; /* Add padding for spacing */
         margin-bottom: 20px; /* Add spacing between sections */
     }
 
@@ -63,7 +63,7 @@
 
     .text-justify {
         font-size: 14px; /* Smaller text for mobile */
-        padding: 10px;
+        padding: 0px;
     }
 
     .container-fluid {
