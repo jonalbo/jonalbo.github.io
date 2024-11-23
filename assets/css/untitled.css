@@ -24,12 +24,12 @@
 }
 
 /* Navbar toggler button */
-/*.navbar-toggler {
+.navbar-toggler {
     position: absolute; /* Pin the button to a fixed location */
-/*    right: 15px; /* Keep it always aligned to the right */
- /*   top: 20px; /* Always keep it at the top of the navbar */
-   /* padding: 5px 10px; /* Adjust padding for alignment */
- /*   z-index: 10; /* Ensure it stays above other elements */
+    right: 15px; /* Keep it always aligned to the right */
+    top: 20px; /* Always keep it at the top of the navbar */
+    padding: 5px 10px; /* Adjust padding for alignment */
+    z-index: 10; /* Ensure it stays above other elements */
 }
 
 /* Hide default icon provided by Bootstrap */
