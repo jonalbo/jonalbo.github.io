@@ -43,7 +43,7 @@
 .navbar-toggler .bar3 {
     display: block;
     width: 25px;
-    height: 3px;
+    height: 5px;
     background-color: #fff; /* Change this to match your navbar style */
     margin: 5px auto;
     transition: all 0.3s ease-in-out; /* Smooth animation */
