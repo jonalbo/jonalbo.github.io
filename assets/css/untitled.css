@@ -41,12 +41,12 @@
 
 /* Page-specific fixes for "landing-page" */
 .landing-page .container-fluid {
-    padding-top: 100px; /* Prevent overlap for landing page */
+    padding-top: 0px; /* Prevent overlap for landing page */
 }
 
 /* Fix for images in landing page */
 .landing-page img.img-fluid {
-    margin-bottom: 5px; /* Ensure space below images */
+    margin-bottom: 20px; /* Ensure space below images */
 }
 
 /* General fixes for columns on smaller screens */
