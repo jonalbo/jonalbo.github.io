@@ -41,7 +41,7 @@
 
 /* Fix for images in landing page */
 .landing-page img.img-fluid {
-    margin-bottom: 0px; /* Ensure space below images */
+    margin-bottom: 20px; /* Ensure space below images */
 }
 
 /* General fixes for columns on smaller screens */
@@ -54,7 +54,7 @@
         width: 100%; /* Full width on mobile */
         text-align: center;
         padding: 0px; /* Add padding for spacing */
-        margin-bottom: 0px; /* Add spacing between sections */
+        margin-bottom: 20px; /* Add spacing between sections */
     }
 
     .col-md-6 img {
