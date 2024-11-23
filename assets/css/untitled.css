@@ -11,6 +11,16 @@
     font-size: 16px; /* Consistent font size */
 }
 
+/* Navbar toggler button */
+.navbar-toggler {
+    position: absolute; /* Pin the button to a fixed location */
+    right: 15px; /* Keep it always aligned to the right */
+    top: 50%; /* Vertically center it */
+    transform: translateY(-50%); /* Adjust for centering offset */
+    padding: 5px 10px; /* Adjust padding for better alignment */
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
 /* Responsive font size for navbar */
 @media (max-width: 768px) {
     .navbar-brand.logo {
