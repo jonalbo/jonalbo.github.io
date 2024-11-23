@@ -19,7 +19,7 @@
     word-wrap: break-word; /* Break long words if needed */
     text-align: left;
     font-size: 16px; /* Consistent font size */
-    line-height: 1.2; /* Adjust spacing between lines */
+    line-height: 1.5; /* Adjust spacing between lines */
     max-width: 70%; /* Prevent text from taking up too much space */
 }
 
@@ -39,10 +39,6 @@
     }
 }
 
-/* Page-specific fixes for "landing-page" */
-.landing-page .container-fluid {
-    padding-top: 0px; /* Prevent overlap for landing page */
-}
 
 /* Fix for images in landing page */
 .landing-page img.img-fluid {
