@@ -43,13 +43,12 @@
         </a>
 
 
-<!-- Change to -->
-<dmx-value id="var1" dmx-bind:value="0"></dmx-value>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1_collapse" aria-controls="navbar1_collapse" aria-expanded="false" aria-label="Toggle navigation" dmx-class:change="var1.value == 1" dmx-on:click="var1.setValue(var1.value == 0 ? 1 : 0)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-</button>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       <span class="bar1"></span>
+       <span class="bar2"></span>
+       <span class="bar3"></span>
+    </button>
 
         <!-- Dropdown Menu -->
         <div class="collapse navbar-collapse" id="navbarNav">
