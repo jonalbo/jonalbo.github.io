@@ -65,7 +65,7 @@
 /* Responsive font size for navbar */
 @media (max-width: 768px) {
     .navbar-brand.logo {
-        font-size: 14px; /* Reduce font size on mobile */
+        font-size: 15px; /* Reduce font size on mobile */
     }
 }
 
