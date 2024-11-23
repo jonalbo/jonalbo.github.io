@@ -10,8 +10,6 @@
     justify-content: space-between; /* Space out brand and button */
     position: relative; /* Allow positioning of child elements */
     min-height: 70px;
-    margin-bottom: 0; /* Remove margin below navbar */
-    padding-bottom: 0; /* Ensure no padding under navbar */
 }
 
 /* Navbar brand styling */
@@ -29,6 +27,7 @@
     position: absolute; /* Pin the button to a fixed location */
     right: 15px; /* Keep it always aligned to the right */
     top: 20px; /* Always keep it at the top of the navbar */
+   /* padding: 5px 10px; /* Adjust padding for alignment */
     z-index: 10; /* Ensure it stays above other elements */
 }
 
@@ -39,9 +38,10 @@
     }
 }
 
+
 /* Fix for images in landing page */
 .landing-page img.img-fluid {
-    margin-bottom: 20px; /* Ensure space below images */
+    margin-bottom: 0px; /* Ensure space below images */
 }
 
 /* General fixes for columns on smaller screens */
@@ -53,8 +53,8 @@
     .col-md-6 {
         width: 100%; /* Full width on mobile */
         text-align: center;
-        padding: 0px; /* Remove padding for spacing */
-        margin-bottom: 20px; /* Add spacing between sections */
+        padding: 0px; /* Add padding for spacing */
+        margin-bottom: 0px; /* Add spacing between sections */
     }
 
     .col-md-6 img {
@@ -63,20 +63,11 @@
 
     .text-justify {
         font-size: 14px; /* Smaller text for mobile */
-        padding: 0px; /* Remove padding */
+        padding: 0px;
     }
 
     .container-fluid {
         padding-left: 10px;
         padding-right: 10px;
-        padding-top: 0; /* Remove padding above and below navbar */
-        margin-top: 0; /* Remove additional margin */
     }
-}
-
-/* Specific adjustment for ensuring no unintended gaps below navbar */
-.container-fluid {
-    padding-top: 0; /* Remove padding above content */
-    padding-bottom: 0; /* Remove padding below content */
-    margin-bottom: 0; /* Remove margin below */
 }
