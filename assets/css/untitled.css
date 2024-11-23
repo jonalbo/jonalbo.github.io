@@ -24,12 +24,42 @@
 }
 
 /* Navbar toggler button */
-.navbar-toggler {
+/*.navbar-toggler {
     position: absolute; /* Pin the button to a fixed location */
-    right: 15px; /* Keep it always aligned to the right */
-    top: 20px; /* Always keep it at the top of the navbar */
+/*    right: 15px; /* Keep it always aligned to the right */
+ /*   top: 20px; /* Always keep it at the top of the navbar */
    /* padding: 5px 10px; /* Adjust padding for alignment */
-    z-index: 10; /* Ensure it stays above other elements */
+ /*   z-index: 10; /* Ensure it stays above other elements */
+}
+
+/* Hide default icon provided by Bootstrap */
+.navbar-toggler-icon {
+    display: none;
+}
+
+/* Style the custom hamburger lines */
+.navbar-toggler .bar1,
+.navbar-toggler .bar2,
+.navbar-toggler .bar3 {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff; /* Change this to match your navbar style */
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out; /* Smooth animation */
+}
+
+/* Rotate and transform when expanded */
+.navbar-toggler:not(.collapsed) .bar1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler:not(.collapsed) .bar2 {
+    opacity: 0; /* Hide middle bar */
+}
+
+.navbar-toggler:not(.collapsed) .bar3 {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Responsive font size for navbar */
