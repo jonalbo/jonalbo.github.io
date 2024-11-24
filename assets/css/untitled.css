@@ -35,6 +35,8 @@
 /* Hide default icon provided by Bootstrap */
 .navbar-toggler-icon {
     display: none;
+    outline: none;
+    box-shadow: none;
 }
 
 /* Style the custom hamburger lines */
