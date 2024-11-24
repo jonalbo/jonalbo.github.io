@@ -113,7 +113,7 @@
 /* Navbar links */
 .nav-link {
     position: relative; /* Allows positioning of the arrow */
-    padding-right: 40px; /* Space for the arrow */
+    padding-right: 15px; /* Space for the arrow */
     transition: color 0.3s cubic-bezier(.4, 0, .6, 1); /* Smooth text color change */
 }
 
