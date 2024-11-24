@@ -27,7 +27,7 @@
 .navbar-toggler {
     position: absolute; /* Pin the button to a fixed location */
     right: 15px; /* Keep it always aligned to the right */
-    top: 20px; /* Always keep it at the top of the navbar */
+    top: 40px; /* Always keep it at the top of the navbar */
     padding: 5px 10px; /* Adjust padding for alignment */
     z-index: 10; /* Ensure it stays above other elements */
 }
@@ -43,15 +43,15 @@
 .navbar-toggler .bar3 {
     display: block;
     width: 25px;
-    height: 3px;
+    height: 2px;
     background-color: #fff; /* Change this to match your navbar style */
-    margin: 5px auto;
+    margin: 8px;
     transition: all 0.3s ease-in-out; /* Smooth animation */
 }
 
 /* Rotate and transform when expanded */
 .navbar-toggler:not(.collapsed) .bar1 {
-    transform: rotate(45deg) translate(6px, 6px); /* Uniform translation */
+    transform: rotate(45deg) translate(7px, 7px); /* Uniform translation */
 }
 
 .navbar-toggler:not(.collapsed) .bar2 {
@@ -59,7 +59,7 @@
 }
 
 .navbar-toggler:not(.collapsed) .bar3 {
-    transform: rotate(-45deg) translate(6px, -6px); /* Uniform translation */
+    transform: rotate(-45deg) translate(7px, -7px); /* Uniform translation */
 }
 
 
