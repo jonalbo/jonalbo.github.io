@@ -28,8 +28,11 @@
     position: absolute; /* Pin the button to a fixed location */
     right: 15px; /* Keep it always aligned to the right */
     top: 40px; /* Always keep it at the top of the navbar */
-    padding: 5px 10px; /* Adjust padding for alignment */
     z-index: 10; /* Ensure it stays above other elements */
+    background: none; /* Remove background color */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove any shadow */
+    padding: 0; /* Remove padding */
 }
 
 /* Hide default icon provided by Bootstrap */
@@ -105,4 +108,28 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+}
+
+/* Navbar links */
+.nav-link {
+    position: relative; /* Allows arrow positioning */
+    padding-right: 30px; /* Space for arrow */
+    transition: color 0.3s ease-in-out; /* Smooth text color change */
+}
+
+/* Arrow styling (initially hidden) */
+.nav-link::after {
+    content: '→'; /* Unicode arrow symbol */
+    position: absolute;
+    right: 10px; /* Position arrow on the right */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%);
+    font-size: 16px; /* Match text size */
+    color: transparent; /* Initially invisible */
+    transition: color 0.3s ease-in-out; /* Smooth arrow appearance */
+}
+
+/* Show arrow on hover */
+.nav-link:hover::after {
+    color: #fff; /* Make arrow visible (adjust to match your theme) */
 }
