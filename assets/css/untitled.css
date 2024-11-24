@@ -51,7 +51,7 @@
 
 /* Rotate and transform when expanded */
 .navbar-toggler:not(.collapsed) .bar1 {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6px, 6px); /* Uniform translation */
 }
 
 .navbar-toggler:not(.collapsed) .bar2 {
@@ -59,10 +59,9 @@
 }
 
 .navbar-toggler:not(.collapsed) .bar3 {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px); /* Uniform translation */
 }
 
-}
 
 /* Responsive font size for navbar */
 @media (max-width: 768px) {
