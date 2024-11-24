@@ -112,24 +112,29 @@
 
 /* Navbar links */
 .nav-link {
-    position: relative; /* Allows arrow positioning */
-    padding-right: 30px; /* Space for arrow */
-    transition: color 0.3s ease-in-out; /* Smooth text color change */
+    position: relative; /* Allows positioning of the arrow */
+    padding-right: 40px; /* Space for the arrow */
+    transition: color 0.3s cubic-bezier(.4, 0, .6, 1); /* Smooth text color change */
 }
 
-/* Arrow styling (initially hidden) */
+/* Arrow styling */
 .nav-link::after {
-    content: '→'; /* Unicode arrow symbol */
+    content: ''; /* Empty content for the arrow */
     position: absolute;
-    right: 10px; /* Position arrow on the right */
     top: 50%; /* Vertically center */
-    transform: translateY(-50%);
-    font-size: 16px; /* Match text size */
-    color: transparent; /* Initially invisible */
-    transition: color 0.3s ease-in-out; /* Smooth arrow appearance */
+    right: 10px; /* Position arrow on the right */
+    transform: translateY(-50%) rotate(-135deg); /* Rotate to form ">" */
+    width: 15px; /* Arrow width */
+    height: 15px; /* Arrow height */
+    border-right: 2px solid #fff; /* Right edge of the arrow */
+    border-bottom: 2px solid #fff; /* Bottom edge of the arrow */
+    border-radius: 2px; /* Fully round all edges, including inner corners */
+    opacity: 0; /* Initially hidden */
+    transition: all 0.5s cubic-bezier(.4, 0, .6, 1); /* Apple-style easing */
 }
 
-/* Show arrow on hover */
+/* Hover effect */
 .nav-link:hover::after {
-    color: #fff; /* Make arrow visible (adjust to match your theme) */
+    opacity: 1; /* Make the arrow visible */
+    transform: translateY(-50%) rotate(-45deg); /* Slight animation effect */
 }
