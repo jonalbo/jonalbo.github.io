@@ -46,6 +46,7 @@
     height: 2px;
     background-color: #fff; /* Change this to match your navbar style */
     margin: 8px;
+    border-radius: 50px;
     transition: all 0.3s ease-in-out; /* Smooth animation */
 }
 
