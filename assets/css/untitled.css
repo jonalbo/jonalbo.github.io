@@ -138,3 +138,10 @@
     opacity: 1; /* Make the arrow visible */
     transform: translateY(-50%) rotate(-45deg); /* Slight animation effect */
 }
+
+/* Hide arrows in desktop view */
+@media (min-width: 992px) {
+    .nav-link::after {
+        display: none; /* Completely hide arrows on larger screens */
+    }
+}
