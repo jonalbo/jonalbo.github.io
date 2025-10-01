@@ -27,5 +27,22 @@
         <a class="link" href="https://www.jonalbo.com/photography.html">Photography</a>
       </div>
   </div>
-  <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+  <a class="down" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const downChevron = document.querySelector('.down');
+  if (!downChevron) return;
+
+  // Find the first <section> on the page
+  const firstSection = document.querySelector('section');
+  if (!firstSection) return; // do nothing if no sections
+
+  // Smooth scroll when chevron is clicked
+  downChevron.addEventListener('click', function(e) {
+    e.preventDefault();
+    firstSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
