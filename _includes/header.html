@@ -32,6 +32,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll for header links
   const links = document.querySelectorAll('.header-links a');
 
   links.forEach(link => {
@@ -39,23 +40,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!href || !href.includes('#')) return;
 
     link.addEventListener('click', function(e) {
-      const linkUrl = new URL(href, window.location.origin); // full URL object
-      const targetHash = linkUrl.hash.substring(1); // remove the '#'
+      const linkUrl = new URL(href, window.location.origin);
+      const targetHash = linkUrl.hash.substring(1); // remove '#'
       const targetSection = document.getElementById(targetHash);
-      if (!targetSection) return; // section doesn't exist on this page
 
-      // Check if link points to homepage (ignore domain differences)
-      const isHomeLink = linkUrl.pathname.endsWith('/') || linkUrl.pathname.endsWith('/index.html');
-      const currentPath = window.location.pathname.replace(/\/$/, ''); // remove trailing slash
+      // Normalize current page path
+      const currentPath = window.location.pathname.replace(/\/$/, '');
       const isOnHomePage = currentPath === '/particle_site' || currentPath === '/particle_site/index.html';
+      const isHomeLink = linkUrl.pathname.endsWith('/') || linkUrl.pathname.endsWith('/index.html');
 
       if (isHomeLink && isOnHomePage) {
         // Already on homepage → smooth scroll
         e.preventDefault();
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, '', '#' + targetHash); // update URL hash
+        if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', '#' + targetHash);
       }
-      // else → navigate normally to another page with hash
+      // else → let browser navigate to homepage with hash normally
     });
   });
 
@@ -67,6 +67,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const firstSection = document.querySelector('section');
       if (firstSection) firstSection.scrollIntoView({ behavior: 'smooth' });
     });
+  }
+
+  // Smooth scroll to hash on page load (for links from other pages)
+  if (window.location.hash) {
+    const target = document.getElementById(window.location.hash.substring(1));
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }, 50); // slight delay to let the page render
+    }
   }
 });
 </script>
