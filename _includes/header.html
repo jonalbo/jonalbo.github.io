@@ -49,12 +49,20 @@ document.addEventListener('DOMContentLoaded', function() {
       const isHomeLink = linkUrl.pathname.endsWith('/') || linkUrl.pathname.endsWith('/index.html');
 
       if (isHomeLink && isOnHomePage && targetSection) {
-        // Already on homepage → smooth scroll directly
+        // Already on homepage → scroll header first, then section
         e.preventDefault();
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, '', '#' + targetHash);
+
+        const header = document.querySelector('.header');
+        if (header) {
+          header.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        setTimeout(() => {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+          history.pushState(null, '', '#' + targetHash);
+        }, 400); // adjust delay if needed
       }
-      // Else, let browser navigate normally to homepage with hash
+      // else → navigate normally to homepage with hash
     });
   });
 
@@ -68,20 +76,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Handle scrolling when coming from another page
+  // Handle smooth scroll on page load with hash (from other pages)
   if (window.location.hash) {
     const targetId = window.location.hash.substring(1);
     const target = document.getElementById(targetId);
     if (target) {
-      // First scroll to top (header)
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const header = document.querySelector('.header');
+      if (header) {
+        header.scrollIntoView({ behavior: 'smooth' });
+      }
 
-      // Then scroll to target after short delay
       setTimeout(() => {
         target.scrollIntoView({ behavior: 'smooth' });
-      }, 300); // delay in ms, adjust as needed
+      }, 400);
     }
   }
 });
 </script>
-
