@@ -32,17 +32,29 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const downChevron = document.querySelector('.down');
-  if (!downChevron) return;
-
-  // Find the first <section> on the page
-  const firstSection = document.querySelector('section');
-  if (!firstSection) return; // do nothing if no sections
-
-  // Smooth scroll when chevron is clicked
-  downChevron.addEventListener('click', function(e) {
-    e.preventDefault();
-    firstSection.scrollIntoView({ behavior: 'smooth' });
+  // Smooth scroll for header links with hashes
+  document.querySelectorAll('.header-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.includes('#')) {
+      link.addEventListener('click', function(e) {
+        const [path, hash] = href.split('#');
+        if ((path === "" || path === "/" || path === "/particle_site/") && window.location.pathname === "/particle_site/") {
+          e.preventDefault();
+          const target = document.getElementById(hash);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
   });
+
+  // Smooth scroll for down chevron
+  const downChevron = document.querySelector('.down');
+  if (downChevron) {
+    downChevron.addEventListener('click', function(e) {
+      e.preventDefault();
+      const firstSection = document.querySelector('section');
+      if (firstSection) firstSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 });
 </script>
