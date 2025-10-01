@@ -66,6 +66,8 @@
 .photo-gallery {
   padding: 20px;
   background-color: #ffffff; /* white background */
+  max-width: 1200px; /* limits overall gallery width */
+  margin: 0 auto; /* center gallery */
 }
 
 .photo-grid {
@@ -76,7 +78,7 @@
 
 .photo-grid-item {
   width: 100%;
-  aspect-ratio: 3 / 2; /* keep 3:2 ratio */
+  aspect-ratio: 3 / 2; /* keeps 3:2 ratio */
   overflow: hidden;
 }
 
@@ -85,27 +87,28 @@
   height: 100%;
   object-fit: contain; /* fit inside rectangle without cropping */
   background-color: #ffffff;
+  display: block;
   border-radius: 4px;
 }
 
 /* Medium devices (tablets) */
 @media (max-width: 992px) {
   .photo-grid {
-    grid-template-columns: repeat(3, 1fr); /* fewer columns */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Small devices (phones) */
 @media (max-width: 576px) {
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Extra small devices */
 @media (max-width: 400px) {
   .photo-grid {
-    grid-template-columns: 1fr; /* 1 column */
+    grid-template-columns: 1fr;
   }
 }
 </style>
