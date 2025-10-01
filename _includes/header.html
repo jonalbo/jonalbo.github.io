@@ -45,17 +45,34 @@ window.addEventListener("load", function() {
   }
 
   // --- 2. Smooth scroll for header links ---
-  const links = document.querySelectorAll('.header-links a[href^="#"]');
+  const links = document.querySelectorAll('.header-links a[href*="#"]');
   links.forEach(link => {
     link.addEventListener("click", function(e) {
-      const targetId = this.getAttribute("href").substring(1);
-      const target = document.getElementById(targetId);
+      const href = this.getAttribute("href");
 
-      // Only scroll if target exists on this page
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-        history.pushState(null, "", "#" + targetId);
+      // case 1: /#about or /#projects → on homepage
+      if (href.startsWith("/#")) {
+        if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+          e.preventDefault();
+          const targetId = href.substring(2); // remove "/#"
+          const target = document.getElementById(targetId);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+            history.pushState(null, "", "#" + targetId);
+          }
+        }
+        // else let it navigate normally (to home)
+      }
+
+      // case 2: #about → same page hash
+      else if (href.startsWith("#")) {
+        const targetId = href.substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
+          history.pushState(null, "", "#" + targetId);
+        }
       }
     });
   });
