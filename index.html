@@ -11,3 +11,12 @@ permalink: /
 <section id="projects">
   {% include projects.html %}
 </section>
+
+<script>
+  window.addEventListener("load", function() {
+    const el = document.getElementById("about");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+</script>
