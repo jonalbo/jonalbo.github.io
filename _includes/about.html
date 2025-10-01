@@ -17,6 +17,7 @@
   </div>
 </div>
 
+
 <div class="user">
   <div class="tech">
     <h2>Analyzing </h2>
@@ -57,15 +58,17 @@
   </div>
 </div>
 
+<style>
 .about-intro {
   display: flex;
   gap: 30px;
   align-items: flex-start;
   margin-bottom: 40px;
+  text-align: left; /* make sure text is left-aligned */
 }
 
 .headshot {
-  flex: 0 0 200px; /* fixed width for headshot */
+  flex: 0 0 150px; /* smaller fixed width for headshot */
 }
 
 .headshot img {
@@ -80,7 +83,7 @@
   line-height: 1.6;
 }
 
-/* Responsive: stack on small screens */
+/* Responsive: stack on smaller screens */
 @media (max-width: 768px) {
   .about-intro {
     flex-direction: column;
@@ -90,5 +93,7 @@
   .headshot {
     flex: none;
     width: 100%;
+    max-width: 200px; /* optional, keeps image reasonable on small screens */
   }
 }
+</style>
