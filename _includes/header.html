@@ -32,25 +32,34 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scroll for header links with hashes
-  document.querySelectorAll('.header-links a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && href.includes('#')) {
-      link.addEventListener('click', function(e) {
-        const [path, hash] = href.split('#');
-        const target = document.getElementById(hash);
-        if (!target) return; // do nothing if section doesn’t exist
+  const links = document.querySelectorAll('.header-links a');
 
-        // If already on the right page, scroll smoothly
-        if ((path === "" || path === "/" || path === "/particle_site/") && window.location.pathname === "/particle_site/") {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    }
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || !href.includes('#')) return;
+
+    link.addEventListener('click', function(e) {
+      const [path, hash] = href.split('#');
+      const target = document.getElementById(hash);
+      if (!target) return; // section doesn't exist
+
+      // Determine if we're already on the correct page
+      const isHomePage = window.location.pathname === "/particle_site/" || window.location.pathname === "/particle_site/index.html";
+      const isLinkToHomeSection = path === "" || path === "/" || path === "/particle_site/";
+
+      if (isHomePage && isLinkToHomeSection) {
+        // Override default jump and scroll smoothly
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+
+        // Update URL hash without jumping
+        history.pushState(null, '', '#' + hash);
+      } 
+      // else: clicking will navigate to homepage with hash normally
+    });
   });
 
-  // Smooth scroll for down chevron
+  // Down chevron scroll
   const downChevron = document.querySelector('.down');
   if (downChevron) {
     downChevron.addEventListener('click', function(e) {
