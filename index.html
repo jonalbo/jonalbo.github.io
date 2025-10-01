@@ -13,23 +13,23 @@ permalink: /
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Only run if there's a hash in the URL
+window.addEventListener("load", function() {
+  // If there's a hash in the URL, smooth scroll to it
   if (window.location.hash) {
     const targetId = window.location.hash.substring(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      // Scroll to top immediately to prevent abrupt jump
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      // Optional: start at top to prevent abrupt jump
       window.scrollTo(0, 0);
-      
-      // Smooth scroll to target after a short delay
+
+      // Smooth scroll after a short delay
       setTimeout(() => {
-        target.scrollIntoView({ behavior: 'smooth' });
+        targetEl.scrollIntoView({ behavior: "smooth" });
       }, 50);
     }
   }
 
-  // Smooth scrolling for in-page anchor links
+  // Optional: smooth scrolling for in-page anchor links
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href').substring(1);
