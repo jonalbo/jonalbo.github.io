@@ -38,10 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (href && href.includes('#')) {
       link.addEventListener('click', function(e) {
         const [path, hash] = href.split('#');
+        const target = document.getElementById(hash);
+        if (!target) return; // do nothing if section doesn’t exist
+
+        // If already on the right page, scroll smoothly
         if ((path === "" || path === "/" || path === "/particle_site/") && window.location.pathname === "/particle_site/") {
           e.preventDefault();
-          const target = document.getElementById(hash);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
+          target.scrollIntoView({ behavior: 'smooth' });
         }
       });
     }
