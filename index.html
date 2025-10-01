@@ -11,3 +11,33 @@ permalink: /
 <section id="projects">
   {% include projects.html %}
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll if homepage loads with hash
+  if (window.location.hash) {
+    const targetId = window.location.hash.substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  }
+
+  // Smooth scroll for in-page links
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', '#' + targetId);
+      }
+    });
+  });
+});
+</script>
