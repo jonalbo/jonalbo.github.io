@@ -14,21 +14,23 @@ permalink: /
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scroll if homepage loads with hash
+  // Only run if there's a hash in the URL
   if (window.location.hash) {
     const targetId = window.location.hash.substring(1);
     const target = document.getElementById(targetId);
     if (target) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Scroll to top immediately to prevent abrupt jump
+      window.scrollTo(0, 0);
+      
+      // Smooth scroll to target after a short delay
       setTimeout(() => {
         target.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      }, 50);
     }
   }
 
-  // Smooth scroll for in-page links
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(link => {
+  // Smooth scrolling for in-page anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href').substring(1);
       const target = document.getElementById(targetId);
