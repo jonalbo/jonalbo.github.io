@@ -32,57 +32,42 @@
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const links = document.querySelectorAll('.header-links a');
-
-  links.forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href || !href.includes('#')) return;
-
-    link.addEventListener('click', function(e) {
-      const linkUrl = new URL(href, window.location.origin);
-      const targetHash = linkUrl.hash.substring(1);
-      const targetSection = document.getElementById(targetHash);
-
-      // Normalize current page path
-      const currentPath = window.location.pathname.replace(/\/$/, '');
-      const isOnHomePage = currentPath === '/particle_site' || currentPath === '/particle_site/index.html';
-      const isHomeLink = linkUrl.pathname.endsWith('/') || linkUrl.pathname.endsWith('/index.html');
-
-      if (isHomeLink && isOnHomePage && targetSection) {
-        // Already on homepage → smooth scroll directly
-        e.preventDefault();
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, '', '#' + targetHash);
-      }
-      // Else, let browser navigate normally to homepage with hash
-    });
-  });
-
-  // Down chevron scroll
-  const downChevron = document.querySelector('.down');
-  if (downChevron) {
-    downChevron.addEventListener('click', function(e) {
-      e.preventDefault();
-      const firstSection = document.querySelector('section');
-      if (firstSection) firstSection.scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-
-  // Handle scrolling when coming from another page
+window.addEventListener("load", function() {
+  // --- 1. Smooth scroll if page loads with a hash ---
   if (window.location.hash) {
     const targetId = window.location.hash.substring(1);
     const target = document.getElementById(targetId);
     if (target) {
-      // First scroll to top (header)
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Then scroll to target after short delay
       setTimeout(() => {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }, 300); // delay in ms, adjust as needed
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 50);
     }
+  }
+
+  // --- 2. Smooth scroll for header links ---
+  const links = document.querySelectorAll('.header-links a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      const targetId = this.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
+
+      // Only scroll if target exists on this page
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+        history.pushState(null, "", "#" + targetId);
+      }
+    });
+  });
+
+  // --- 3. Smooth scroll for down chevron ---
+  const downChevron = document.querySelector(".down");
+  if (downChevron) {
+    downChevron.addEventListener("click", function(e) {
+      e.preventDefault();
+      const firstSection = document.querySelector("section");
+      if (firstSection) firstSection.scrollIntoView({ behavior: "smooth" });
+    });
   }
 });
 </script>
-
