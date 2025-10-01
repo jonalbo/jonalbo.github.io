@@ -1,0 +1,18 @@
+---
+layout: default
+title: Photography
+permalink: /photography/
+---
+
+<section id="photography">
+  {% include photos.html %}
+</section>
+
+<script>
+  window.addEventListener("load", function() {
+    const el = document.getElementById("photography");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+</script>
