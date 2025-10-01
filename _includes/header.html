@@ -30,6 +30,7 @@
   <a class="down" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
 </div>
 
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('.header-links a');
@@ -49,20 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const isHomeLink = linkUrl.pathname.endsWith('/') || linkUrl.pathname.endsWith('/index.html');
 
       if (isHomeLink && isOnHomePage && targetSection) {
-        // Already on homepage → scroll header first, then section
+        // Already on homepage → smooth scroll directly
         e.preventDefault();
-
-        const header = document.querySelector('.header');
-        if (header) {
-          header.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        setTimeout(() => {
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-          history.pushState(null, '', '#' + targetHash);
-        }, 400); // adjust delay if needed
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', '#' + targetHash);
       }
-      // else → navigate normally to homepage with hash
+      // Else, let browser navigate normally to homepage with hash
     });
   });
 
@@ -76,20 +69,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Handle smooth scroll on page load with hash (from other pages)
+  // Handle scrolling when coming from another page
   if (window.location.hash) {
     const targetId = window.location.hash.substring(1);
     const target = document.getElementById(targetId);
     if (target) {
-      const header = document.querySelector('.header');
-      if (header) {
-        header.scrollIntoView({ behavior: 'smooth' });
-      }
+      // First scroll to top (header)
+      window.scrollTo({ top: 0, behavior: 'smooth' });
 
+      // Then scroll to target after short delay
       setTimeout(() => {
         target.scrollIntoView({ behavior: 'smooth' });
-      }, 400);
+      }, 300); // delay in ms, adjust as needed
     }
   }
 });
 </script>
+
