@@ -1,21 +1,34 @@
-<div class="about-intro">
-  <div class="headshot">
-    <img src="/particle_site/assets/img/headshot.jpg" alt="Headshot">
-  </div>
+<div style="background-color: #FFFFFF; padding: 20px;">
+  <div class="container-fluid px-3">
+    <div class="row no-gutters align-items-start">
+      
+      <!-- Headshot column -->
+      <div class="col-md-6 text-center">
+        <img src="/particle_site/assets/img/headshot.png" alt="Headshot" 
+             class="img-fluid" 
+             style="height: auto; max-width: 80%; margin-bottom: 20px;">
+      </div>
+      
+      <!-- Text column -->
+      <div class="col-md-6">
+        <p class="text-left" style="font-size: 16px; padding:10px;">
+          <strong>Hello!</strong><br><br>
+          <strong>Thank you for stopping by! I’m currently working on revamping my website. I plan to build out sections describing specific projects and workflows that I used to achieve those results.</strong><br><br>
+          <strong>In the meantime, a little background on me:</strong><br><br>
+          <strong>I love to solve difficult problems. I earned my PhD in biomedical engineering in August 2025 by developing a physical tool, called SPOTs, to help scientists and researchers be more effective and efficient in solving complex problems.</strong><br><br>
+          <strong>SPOTs was built for bench scientists to test anywhere from 100 to over 100,000 reactions to discover new drug combinations, create new drug molecules, and streamline clinical assays, all for 10,000X less cost than available methods.</strong><br><br>
+          <strong>Since biological and chemical reactions were run directly on SPOTs itself and it was designed to be broadly applicable across science, I had to develop ways to process and analyze the thousands of experiments we were quickly generating. This often came in the form of images, where I would look for information such as living cells being killed by drugs, or color changes when I modified a chemical compound.</strong><br><br>
+          <strong>I used SPOTs for over 20 different projects and developed numerous Python-based pipelines to process the data and analyze the results (this is what helped me learn that I love data science!). After I extracted image data, I would leverage different statistical, ML, and AI techniques to give insight into the new discoveries we made or to suggest the next experiments to run to build stronger models.</strong><br><br>
+          <strong>SPOTs was a technology that I spun out during my PhD, and I spent a large portion of my time pursuing. I focused on the business aspects of learning how we fit in the market and scaling the product to be cost-effective and manufactured on a large scale (of over 3000 tools per month!). I also worked with leading research labs around the country at Stanford, Weill Cornell Medicine, and Harvard to learn what aspects they liked and (potentially more importantly) didn’t like about the product to build it into a user-friendly, functional device.</strong><br><br>
+          <strong>Upon graduating, I chose not to continue with the company due to challenges with the market. Through this work, I fell in love with developing complex Python data analysis pipelines and managing projects our incredible collaborators were working on.</strong><br><br>
+          <strong>I am currently pursuing industry roles in data science, project management, and broader roles across life sciences and medicine where I can continue to solve difficult problems!</strong>
+        </p>
+      </div>
 
-  <div class="user-details">
-    <p><strong>Hello!</strong></p>
-    <p><strong>Thank you for stopping by! I’m currently working on revamping my website. I plan to build out sections describing specific projects and workflows that I used to achieve those results.</strong></p>
-    <p><strong>In the meantime, a little background on me:</strong></p>
-    <p><strong>I love to solve difficult problems. I earned my PhD in biomedical engineering in August 2025 by developing a physical tool, called SPOTs, to help scientists and researchers be more effective and efficient in solving complex problems.</strong></p>
-    <p><strong>SPOTs was built for bench scientists to test anywhere from 100 to over 100,000 reactions to discover new drug combinations, create new drug molecules, and streamline clinical assays, all for 10,000X less cost than available methods.</strong></p>
-    <p><strong>Since biological and chemical reactions were run directly on SPOTs itself and it was designed to be broadly applicable across science, I had to develop ways to process and analyze the thousands of experiments we were quickly generating. This often came in the form of images, where I would look for information such as living cells being killed by drugs, or color changes when I modified a chemical compound.</strong></p>
-    <p><strong>I used SPOTs for over 20 different projects and developed numerous Python-based pipelines to process the data and analyze the results (this is what helped me learn that I love data science!). After I extracted image data, I would leverage different statistical, ML, and AI techniques to give insight into the new discoveries we made or to suggest the next experiments to run to build stronger models.</strong></p>
-    <p><strong>SPOTs was a technology that I spun out during my PhD, and I spent a large portion of my time pursuing. I focused on the business aspects of learning how we fit in the market and scaling the product to be cost-effective and manufactured on a large scale (of over 3000 tools per month!). I also worked with leading research labs around the country at Stanford, Weill Cornell Medicine, and Harvard to learn what aspects they liked and (potentially more importantly) didn’t like about the product to build it into a user-friendly, functional device.</strong></p>
-    <p><strong>Upon graduating, I chose not to continue with the company due to challenges with the market. Through this work, I fell in love with developing complex Python data analysis pipelines and managing projects our incredible collaborators were working on.</strong></p>
-    <p><strong>I am currently pursuing industry roles in data science, project management, and broader roles across life sciences and medicine where I can continue to solve difficult problems!</strong></p>
+    </div>
   </div>
 </div>
+
 
 
 <div class="user">
@@ -57,43 +70,3 @@
     </p>
   </div>
 </div>
-
-<style>
-.about-intro {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  margin-bottom: 40px;
-  text-align: left; /* make sure text is left-aligned */
-}
-
-.headshot {
-  flex: 0 0 150px; /* smaller fixed width for headshot */
-}
-
-.headshot img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.user-details {
-  flex: 1;
-  font-family: 'Lato', sans-serif;
-  line-height: 1.6;
-}
-
-/* Responsive: stack on smaller screens */
-@media (max-width: 768px) {
-  .about-intro {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .headshot {
-    flex: none;
-    width: 100%;
-    max-width: 200px; /* optional, keeps image reasonable on small screens */
-  }
-}
-</style>
