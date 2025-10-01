@@ -19,9 +19,26 @@
 </div>
 
 
+<style>
+.user {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
 
-<div class="user" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;">
+.user .tech {
+  width: 30%;
+}
 
+/* Mobile layout: one per row */
+@media (max-width: 768px) {
+  .user .tech {
+    width: 100%;
+  }
+}
+</style>
+<div class="user">
   <div class="tech" style="width: 30%;">
     <h2>Data Analysis</h2>
     <div class="icons">
