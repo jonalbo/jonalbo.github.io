@@ -65,44 +65,51 @@
 <style>
 .photo-gallery {
   padding: 20px;
-  background-color: rgb(44,44,44);
+  background-color: #ffffff; /* white background */
 }
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* default 4 columns */
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
   gap: 10px;
 }
 
-.photo-grid img {
+.photo-grid-item {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* 3:2 ratio to match 6000x4000 images */
+  overflow: hidden;
+}
+
+.photo-grid-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* fit full image without cropping */
+  background-color: #ffffff;
   border-radius: 4px;
 }
 
 /* Medium devices (tablets) */
 @media (max-width: 992px) {
   .photo-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Small devices (phones) */
 @media (max-width: 576px) {
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on phones */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Extra small devices (very small phones) */
+/* Extra small devices */
 @media (max-width: 400px) {
   .photo-grid {
-    grid-template-columns: 1fr; /* 1 column */
+    grid-template-columns: 1fr;
   }
 }
 </style>
+
 
 
 
