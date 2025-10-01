@@ -40,18 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     link.addEventListener('click', function(e) {
       const linkUrl = new URL(href, window.location.origin); // full URL object
-      const targetHash = linkUrl.hash.substring(1); // remove the '#' 
+      const targetHash = linkUrl.hash.substring(1); // remove the '#'
       const targetSection = document.getElementById(targetHash);
       if (!targetSection) return; // section doesn't exist on this page
 
-      // Check if this link points to the current page
-      if (linkUrl.pathname === window.location.pathname) {
-        // Already on the page → smooth scroll
+      // Check if link points to homepage (ignore domain differences)
+      const isHomeLink = linkUrl.pathname.endsWith('/') || linkUrl.pathname.endsWith('/index.html');
+      const isOnHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html');
+
+      if (isHomeLink && isOnHomePage) {
+        // Already on homepage → smooth scroll
         e.preventDefault();
         targetSection.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, '', '#' + targetHash); // update URL without jump
+        history.pushState(null, '', '#' + targetHash); // update URL hash
       }
-      // else → normal navigation to another page with hash
+      // else → navigate normally to another page with hash
     });
   });
 
