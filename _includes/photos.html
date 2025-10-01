@@ -70,20 +70,20 @@
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+  grid-template-columns: repeat(4, 1fr); /* 4 columns default */
   gap: 10px;
 }
 
 .photo-grid-item {
   width: 100%;
-  aspect-ratio: 3 / 2; /* 3:2 ratio to match 6000x4000 images */
+  aspect-ratio: 3 / 2; /* keep 3:2 ratio */
   overflow: hidden;
 }
 
 .photo-grid-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* fit full image without cropping */
+  object-fit: contain; /* fit inside rectangle without cropping */
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -91,21 +91,21 @@
 /* Medium devices (tablets) */
 @media (max-width: 992px) {
   .photo-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* fewer columns */
   }
 }
 
 /* Small devices (phones) */
 @media (max-width: 576px) {
   .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
   }
 }
 
 /* Extra small devices */
 @media (max-width: 400px) {
   .photo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 column */
   }
 }
 </style>
