@@ -7,3 +7,12 @@ permalink: /news/
 <section id="news">
   {% include inthenews.html %}
 </section>
+
+<script>
+  window.addEventListener("load", function() {
+    const el = document.getElementById("news");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+</script>
