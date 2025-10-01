@@ -39,23 +39,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!href || !href.includes('#')) return;
 
     link.addEventListener('click', function(e) {
-      const [path, hash] = href.split('#');
-      const target = document.getElementById(hash);
-      if (!target) return; // section doesn't exist
+      const linkUrl = new URL(href, window.location.origin); // full URL object
+      const targetHash = linkUrl.hash.substring(1); // remove the '#' 
+      const targetSection = document.getElementById(targetHash);
+      if (!targetSection) return; // section doesn't exist on this page
 
-      // Determine if we're already on the correct page
-      const isHomePage = window.location.pathname === "/particle_site/" || window.location.pathname === "/particle_site/index.html";
-      const isLinkToHomeSection = path === "" || path === "/" || path === "/particle_site/";
-
-      if (isHomePage && isLinkToHomeSection) {
-        // Override default jump and scroll smoothly
+      // Check if this link points to the current page
+      if (linkUrl.pathname === window.location.pathname) {
+        // Already on the page → smooth scroll
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-
-        // Update URL hash without jumping
-        history.pushState(null, '', '#' + hash);
-      } 
-      // else: clicking will navigate to homepage with hash normally
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', '#' + targetHash); // update URL without jump
+      }
+      // else → normal navigation to another page with hash
     });
   });
 
